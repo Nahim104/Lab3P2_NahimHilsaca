@@ -41,9 +41,36 @@ public class Lab3p2_NahimHilsacaa {
             switch (opcion) {
                 case 1: {
                     boolean combustible=false;
+                    int cont_letras=0;
+                    int cont_numeros=0;
                      System.out.print("Ingrese el numero de la placa del automovil:");
         String placa = leer.next();
         leer.nextLine();
+        while (placa.length() < 7) {
+                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        placa = leer.next();
+                    }
+                    for (int k = 0; k < placa.length(); k++) {
+
+                        char j = placa.charAt(k);
+
+                        if ((j > 64 && j < 90) || (j > 96 && j < 123)) {
+                            cont_letras++;
+                        }
+
+                        if (j < 58 && j > 47) {
+
+                            cont_numeros++;
+                        }
+                    }
+                    while(cont_letras!=3 && cont_numeros!=4 ) {
+                        System.out.println("La placa debe tener 3 caracteres y 4 digitos  ");
+                        placa=leer.next();
+                        leer.nextLine();
+                        
+                    }
+                   
+        
         System.out.print("Ingrese la Marca del automovil: ");
         String Marca = leer.next();
         leer.nextLine();
@@ -54,7 +81,7 @@ public class Lab3p2_NahimHilsacaa {
         String tipo = leer.next();
         leer.nextLine();
         System.out.print("Ingrese el color del vehiculo del automovil: ");
-        Color color = JColorChooser.showDialog(null, "Elegir el color del automovil", Color.yellow);
+        Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
         Date fecha_anio= new Date();
@@ -95,12 +122,60 @@ public class Lab3p2_NahimHilsacaa {
                     break;
                 }
 
-                case 2:
+                case 2:{
+                     System.out.print("Ingrese el numero de la placa de la motocicleta:");
+        String placa = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese la Marca de la motocicleta: ");
+        String Marca = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el Modelo de la motocicleta: ");
+        String Modelo = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el tipo de la motocicleta: ");
+        String tipo = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el color de la motocicleta: ");
+        Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
+        System.out.print("Ingrese el anio del automovil: ");
+        int anio=leer.nextInt();
+        Date fecha_anio= new Date();
+        fecha_anio.setYear(anio);
  
+                    System.out.print("Ingrese la velocidad maxima: ");
+                    int velocidad_maxima= leer.nextInt();
+                    System.out.print("Ingrese el peso de la motocicleta:");
+                    int peso= leer.nextInt();
+                    System.out.println("Ingrese el consumo maximo de la motocicleta:");
+                    int consumo=leer.nextInt();
+
+                    vehiculos.add(new Motocicleta(velocidad_maxima,peso,consumo,placa,Marca,Modelo,tipo,color,fecha_anio));
+                    
 
                     break;
-
+                }
                 case 3:
+                     System.out.print("Ingrese el numero de la placa del autobus:");
+        String placa = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese la Marca del autobus: ");
+        String Marca = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el Modelo del autobus: ");
+        String Modelo = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el tipo del autobus: ");
+        String tipo = leer.next();
+        leer.nextLine();
+        System.out.print("Ingrese el color del autobus: ");
+        Color color = JColorChooser.showDialog(null, "Elegir el color del automovil", Color.yellow);
+        System.out.print("Ingrese el anio del automovil: ");
+        int anio=leer.nextInt();
+        Date fecha_anio= new Date();
+        fecha_anio.setYear(anio);
+                    System.out.println("Ingrese");
+        
+                
                     break;
 
                 case 4:
