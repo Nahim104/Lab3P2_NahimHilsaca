@@ -45,9 +45,8 @@ public class Lab3p2_NahimHilsacaa {
                     int cont_numeros=0;
                      System.out.print("Ingrese el numero de la placa del automovil:");
         String placa = leer.next();
-        leer.nextLine();
         while (placa.length() < 7) {
-                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        System.out.print("Su placa debe tener 8 caracterese por lo menos");
                         placa = leer.next();
                     }
                     for (int k = 0; k < placa.length(); k++) {
@@ -66,8 +65,11 @@ public class Lab3p2_NahimHilsacaa {
                     while(cont_letras!=3 && cont_numeros!=4 ) {
                         System.out.println("La placa debe tener 3 caracteres y 4 digitos  ");
                         placa=leer.next();
-                        leer.nextLine();
                         
+                    }
+                    while (placa.charAt(0) != 'H') {                        
+                        System.out.println("Su placa debe inciar en H");
+                        placa=leer.next();
                     }
                    
         
@@ -82,6 +84,7 @@ public class Lab3p2_NahimHilsacaa {
         leer.nextLine();
         System.out.print("Ingrese el color del vehiculo del automovil: ");
         Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
+        System.out.println();
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
         Date fecha_anio= new Date();
@@ -131,7 +134,7 @@ public class Lab3p2_NahimHilsacaa {
         String placa = leer.next();
         leer.nextLine();
         while (placa.length() < 7) {
-                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        System.out.print("Su placa debe tener 8 caracterese por lo menos");
                         placa = leer.next();
                     }
                     for (int k = 0; k < placa.length(); k++) {
@@ -166,6 +169,7 @@ public class Lab3p2_NahimHilsacaa {
         leer.nextLine();
         System.out.print("Ingrese el color del vehiculo del automovil: ");
         Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
+                    System.out.println();
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
         Date fecha_anio= new Date();
@@ -205,7 +209,7 @@ public class Lab3p2_NahimHilsacaa {
         String placa = leer.next();
         leer.nextLine();
         while (placa.length() < 7) {
-                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        System.out.print("Su placa debe tener 8 caracterese por lo menos");
                         placa = leer.next();
                     }
                     for (int k = 0; k < placa.length(); k++) {
@@ -239,6 +243,7 @@ public class Lab3p2_NahimHilsacaa {
         String tipo = leer.next();
         leer.nextLine();
         System.out.print("Ingrese el color del vehiculo del automovil: ");
+                    System.out.println();
         Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
@@ -268,8 +273,117 @@ public class Lab3p2_NahimHilsacaa {
                     break;
                 }
                 case 4:{
-                 
                     
+                    ImprimirVehiculos();
+                    System.out.println("Ingrese el vehiculo a modificar: ");
+                    int modificar=leer.nextInt();
+                    
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                        if(modificar==(i+1)){
+                       if(vehiculos.get(i) instanceof Automovil){ 
+                           boolean combustible=false;
+                    int cont_letras=0;
+                    int cont_numeros=0;
+                     System.out.print("Ingrese el numero de la placa del automovil:");
+        String placa = leer.next();
+        while (placa.length() < 7) {
+                        System.out.print("Su placa debe tener 8 caracterese por lo menos");
+                        placa = leer.next();
+                    }
+                    for (int k = 0; k < placa.length(); k++) {
+
+                        char j = placa.charAt(k);
+
+                        if ((j > 64 && j < 90) || (j > 96 && j < 123)) {
+                            cont_letras++;
+                        }
+
+                        if (j < 58 && j > 47) {
+
+                            cont_numeros++;
+                        }
+                    }
+                    while(cont_letras!=3 && cont_numeros!=4 ) {
+                        System.out.println("La placa debe tener 3 caracteres y 4 digitos  ");
+                        placa=leer.next();
+                        
+                    }
+                    while (placa.charAt(0) != 'H') {                        
+                        System.out.println("Su placa debe inciar en H");
+                        placa=leer.next();
+                    }
+                   
+                    ((Automovil)vehiculos.get(i)).setNum_placa(placa);
+                   
+        
+        System.out.print("Ingrese la Marca del automovil: ");
+        String Marca = leer.next();
+        leer.nextLine();
+        ((Automovil)vehiculos.get(i)).setMarca(Marca);
+        System.out.print("Ingrese el Modelo del automovil: ");
+        String Modelo = leer.next();
+        ((Automovil)vehiculos.get(i)).setModelo(Modelo);
+        leer.nextLine();
+        System.out.print("Ingrese el tipo del automovil: ");
+        String tipo = leer.next();
+        leer.nextLine();
+        ((Automovil)vehiculos.get(i)).setTipo(tipo);
+        System.out.print("Ingrese el color del vehiculo del automovil: ");
+        Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
+        ((Automovil)vehiculos.get(i)).setColor(color);
+        System.out.println();
+        System.out.print("Ingrese el anio del automovil: ");
+        int anio=leer.nextInt();
+        Date fecha_anio= new Date();
+        fecha_anio.setYear(anio);
+        ((Automovil)vehiculos.get(i)).setAnio(fecha_anio);
+                    System.out.print("Ingrese el tipo de combustible: ");
+                    String tipo_combustible = leer.next();
+                    leer.nextLine();
+                    if(tipo_combustible.equalsIgnoreCase("diesel")||tipo_combustible.equalsIgnoreCase("regular")||tipo_combustible.equalsIgnoreCase("super")){
+                        combustible=true;
+                    }else{
+                    combustible=false;
+                    }
+                    
+                    if(combustible==false){
+                        System.out.println("Su combustible solo puede ser diesel, regular o super");
+                    tipo_combustible = leer.next();
+                    }
+                  ((Automovil)vehiculos.get(i)).setTipo_combustible(tipo_combustible);
+                    System.out.print("Ingrese el numero de puertas del automovil:");
+                    int num_puertas=leer.nextInt();
+                    
+                    if(num_puertas<=0){
+                        System.out.println("Sus puertas no pueden ser menor a 0");
+                           num_puertas=leer.nextInt();
+                    }
+                ((Automovil)vehiculos.get(i)).setNum_puertas(num_puertas);
+                    System.out.print("Ingrese la transmision del automovil: ");
+                    String transmision=leer.next();
+                    leer.nextLine();
+                ((Automovil)vehiculos.get(i)).setTransmision(transmision);
+                    System.out.print("Ingrese el numero de asientos del automovil: ");
+                    int num_asientos= leer.nextInt();
+                     if(num_asientos<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           num_asientos=leer.nextInt();
+                    }
+                     ((Automovil)vehiculos.get(i)).setNum_asientos(num_asientos);
+                     System.out.println("Automovil agregado!");
+
+                       
+                       
+                       
+                       }else if(vehiculos.get(i) instanceof Motocicleta){
+                       
+                       
+                       
+                       }
+                        
+                        }
+                    }
+                  
                 
                     break;
                 }
@@ -277,6 +391,16 @@ public class Lab3p2_NahimHilsacaa {
                     break;
 
                 case 6:
+                    System.out.println(" Lista de sus Vehiculos");
+                        
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                        
+                        if(vehiculos.get(i) instanceof Automovil){
+                        
+                            System.out.println((i+1)+"-"+vehiculos.get(i).toString());
+                        }
+                        
+                    }
                     break;
 
                 case 7:
@@ -288,6 +412,15 @@ public class Lab3p2_NahimHilsacaa {
             }//Fin del switch
         }//Fin del while
     }//Fin del main
+    
+    public static void ImprimirVehiculos(){
+    for (int i = 0; i < vehiculos.size(); i++) {
+                        
+                        System.out.println(vehiculos.get(i));
+                    }
+    
+    
+    }
 
    
 
