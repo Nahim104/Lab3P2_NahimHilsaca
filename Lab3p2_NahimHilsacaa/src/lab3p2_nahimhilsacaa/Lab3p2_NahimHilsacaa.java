@@ -118,24 +118,53 @@ public class Lab3p2_NahimHilsacaa {
                     }
                      
                      vehiculos.add(new Automovil(tipo_combustible,num_puertas,transmision,num_asientos,placa,Marca,Modelo,tipo,color,fecha_anio));
+                     System.out.println("Automovil agregado!");
 
                     break;
                 }
 
                 case 2:{
-                     System.out.print("Ingrese el numero de la placa de la motocicleta:");
+                   
+                    int cont_letras=0;
+                    int cont_numeros=0;
+                     System.out.print("Ingrese el numero de la placa del automovil:");
         String placa = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese la Marca de la motocicleta: ");
+        while (placa.length() < 7) {
+                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        placa = leer.next();
+                    }
+                    for (int k = 0; k < placa.length(); k++) {
+
+                        char j = placa.charAt(k);
+
+                        if ((j > 64 && j < 90) || (j > 96 && j < 123)) {
+                            cont_letras++;
+                        }
+
+                        if (j < 58 && j > 47) {
+
+                            cont_numeros++;
+                        }
+                    }
+                    while(cont_letras!=3 && cont_numeros!=4 ) {
+                        System.out.println("La placa debe tener 3 caracteres y 4 digitos  ");
+                        placa=leer.next();
+                        leer.nextLine();
+                        
+                    }
+                   
+        
+        System.out.print("Ingrese la Marca del automovil: ");
         String Marca = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el Modelo de la motocicleta: ");
+        System.out.print("Ingrese el Modelo del automovil: ");
         String Modelo = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el tipo de la motocicleta: ");
+        System.out.print("Ingrese el tipo del automovil: ");
         String tipo = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el color de la motocicleta: ");
+        System.out.print("Ingrese el color del vehiculo del automovil: ");
         Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
@@ -144,43 +173,106 @@ public class Lab3p2_NahimHilsacaa {
  
                     System.out.print("Ingrese la velocidad maxima: ");
                     int velocidad_maxima= leer.nextInt();
+                    
+                     if(velocidad_maxima<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           velocidad_maxima=leer.nextInt();
+                    }
+                    
                     System.out.print("Ingrese el peso de la motocicleta:");
                     int peso= leer.nextInt();
+                     if(peso<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           peso=leer.nextInt();
+                    }
                     System.out.println("Ingrese el consumo maximo de la motocicleta:");
                     int consumo=leer.nextInt();
+                     if(consumo<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           consumo=leer.nextInt();
+                    }
 
                     vehiculos.add(new Motocicleta(velocidad_maxima,peso,consumo,placa,Marca,Modelo,tipo,color,fecha_anio));
                     
 
                     break;
                 }
-                case 3:
-                     System.out.print("Ingrese el numero de la placa del autobus:");
+                case 3:{
+                     
+                    int cont_letras=0;
+                    int cont_numeros=0;
+                     System.out.print("Ingrese el numero de la placa del automovil:");
         String placa = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese la Marca del autobus: ");
+        while (placa.length() < 7) {
+                        System.out.print("Su contrasena debe tener 8 caracterese por lo menos");
+                        placa = leer.next();
+                    }
+                    for (int k = 0; k < placa.length(); k++) {
+
+                        char j = placa.charAt(k);
+
+                        if ((j > 64 && j < 90) || (j > 96 && j < 123)) {
+                            cont_letras++;
+                        }
+
+                        if (j < 58 && j > 47) {
+
+                            cont_numeros++;
+                        }
+                    }
+                    while(cont_letras!=3 && cont_numeros!=4 ) {
+                        System.out.println("La placa debe tener 3 caracteres y 4 digitos  ");
+                        placa=leer.next();
+                        leer.nextLine();
+                        
+                    }
+                   
+        
+        System.out.print("Ingrese la Marca del automovil: ");
         String Marca = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el Modelo del autobus: ");
+        System.out.print("Ingrese el Modelo del automovil: ");
         String Modelo = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el tipo del autobus: ");
+        System.out.print("Ingrese el tipo del automovil: ");
         String tipo = leer.next();
         leer.nextLine();
-        System.out.print("Ingrese el color del autobus: ");
-        Color color = JColorChooser.showDialog(null, "Elegir el color del automovil", Color.yellow);
+        System.out.print("Ingrese el color del vehiculo del automovil: ");
+        Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
         System.out.print("Ingrese el anio del automovil: ");
         int anio=leer.nextInt();
         Date fecha_anio= new Date();
         fecha_anio.setYear(anio);
-                    System.out.println("Ingrese");
-        
+                   
+                    System.out.println("Ingrese la capacidad de pasajeros del autobus: ");
+                    int capacidad_pasajeros=leer.nextInt();
+                     if(capacidad_pasajeros<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           capacidad_pasajeros=leer.nextInt();
+                    }
+                    System.out.println("Ingrese el numero de ejes del autobus: ");
+                    int ejes=leer.nextInt();
+                     if(ejes<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           ejes=leer.nextInt();
+                    }
+                    System.out.println("Ingrese la longitud del autobus: ");
+                    int longitud=leer.nextInt();
+                     if(longitud<=0){
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                           longitud=leer.nextInt();
+                    }
+                     vehiculos.add(new Autobus(capacidad_pasajeros,ejes,longitud,placa,Marca,Modelo,tipo,color,fecha_anio));
                 
                     break;
-
-                case 4:
+                }
+                case 4:{
+                 
+                    
+                
                     break;
-
+                }
                 case 5:
                     break;
 
@@ -192,7 +284,7 @@ public class Lab3p2_NahimHilsacaa {
 
                 default:
                     System.out.println("Debe de ingresar de las opciones dadas");
-                    ;
+                    break;
             }//Fin del switch
         }//Fin del while
     }//Fin del main
