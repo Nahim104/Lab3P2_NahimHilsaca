@@ -21,8 +21,8 @@ public class Motocicleta extends Vehiculo {
         super();
     }
 
-    public Motocicleta(int velocidad_maxima, int peso, int consumo, String num_placa, String marca, String tipo, Color color, Date anio) {
-        super(num_placa, marca, tipo, color, anio);
+    public Motocicleta(int velocidad_maxima, int peso, int consumo, String num_placa, String marca, String Modelo, String tipo, Color color, Date anio) {
+        super(num_placa, marca, Modelo, tipo, color, anio);
         this.velocidad_maxima = velocidad_maxima;
         this.peso = peso;
         this.consumo = consumo;
@@ -55,8 +55,10 @@ public class Motocicleta extends Vehiculo {
     @Override
     public String toString() {
         System.out.println(super.toString());
-        return "Motocicleta" + "velocidad_maxima=" + velocidad_maxima + "\n peso=" + peso + "\n consumo=" + consumo ;
+        return "Motocicleta{" + "velocidad_maxima=" + velocidad_maxima + ", peso=" + peso + ", consumo=" + consumo + '}';
     }
+
+    
     
     
     

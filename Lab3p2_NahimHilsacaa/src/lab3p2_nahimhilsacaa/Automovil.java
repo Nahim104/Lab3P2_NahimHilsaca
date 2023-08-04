@@ -24,8 +24,8 @@ public class Automovil extends Vehiculo {
         super();
     }
 
-    public Automovil(String tipo_combustible, int num_puertas, String transmision, int num_asientos, String num_placa, String marca, String tipo, Color color, Date anio) {
-        super(num_placa, marca, tipo, color, anio);
+    public Automovil(String tipo_combustible, int num_puertas, String transmision, int num_asientos, String num_placa, String marca, String Modelo, String tipo, Color color, Date anio) {
+        super(num_placa, marca, Modelo, tipo, color, anio);
         this.tipo_combustible = tipo_combustible;
         this.num_puertas = num_puertas;
         this.transmision = transmision;
@@ -67,9 +67,12 @@ public class Automovil extends Vehiculo {
     @Override
     public String toString() {
         System.out.println(super.toString());
-        return "Automovil" + "tipo_combustible=" + tipo_combustible + "\n num_puertas=" + num_puertas + "\n transmision=" + transmision + "\n num_asientos=" + num_asientos ;
+        return "Automovil{" + "tipo_combustible=" + tipo_combustible + ", num_puertas=" + num_puertas + ", transmision=" + transmision + ", num_asientos=" + num_asientos + '}';
     }
     
+    
+
+   
     
     
     

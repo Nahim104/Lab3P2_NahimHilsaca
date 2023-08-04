@@ -21,8 +21,8 @@ public class Autobus extends Vehiculo {
         super();
     }
 
-    public Autobus(int capacidad_pasajeros, int num_ejes, int longitud, String num_placa, String marca, String tipo, Color color, Date anio) {
-        super(num_placa, marca, tipo, color, anio);
+    public Autobus(int capacidad_pasajeros, int num_ejes, int longitud, String num_placa, String marca, String Modelo, String tipo, Color color, Date anio) {
+        super(num_placa, marca, Modelo, tipo, color, anio);
         this.capacidad_pasajeros = capacidad_pasajeros;
         this.num_ejes = num_ejes;
         this.longitud = longitud;
@@ -57,6 +57,9 @@ public class Autobus extends Vehiculo {
         System.out.println(super.toString());
         return "Autobus{" + "capacidad_pasajeros=" + capacidad_pasajeros + ", num_ejes=" + num_ejes + ", longitud=" + longitud + '}';
     }
+    
+    
+
     
     
     

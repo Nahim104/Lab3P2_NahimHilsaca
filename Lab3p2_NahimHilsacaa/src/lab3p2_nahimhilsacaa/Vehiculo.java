@@ -14,6 +14,7 @@ import java.util.Date;
 public class Vehiculo {
     private String num_placa;
     private String marca;
+    private String Modelo;
     private String tipo;
     private Color color;
     private Date anio;
@@ -21,9 +22,10 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
-    public Vehiculo(String num_placa, String marca, String tipo, Color color, Date anio) {
+    public Vehiculo(String num_placa, String marca, String Modelo, String tipo, Color color, Date anio) {
         this.num_placa = num_placa;
         this.marca = marca;
+        this.Modelo = Modelo;
         this.tipo = tipo;
         this.color = color;
         this.anio = anio;
@@ -43,6 +45,14 @@ public class Vehiculo {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public String getModelo() {
+        return Modelo;
+    }
+
+    public void setModelo(String Modelo) {
+        this.Modelo = Modelo;
     }
 
     public String getTipo() {
@@ -71,8 +81,10 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "num_placa=" + num_placa + ", marca=" + marca + ", tipo=" + tipo + ", color=" + color + ", anio=" + anio + '}';
+        return "Vehiculo{" + "num_placa=" + num_placa + ", marca=" + marca + ", Modelo=" + Modelo + ", tipo=" + tipo + ", color=" + color + ", anio=" + anio + '}';
     }
+    
+   
     
     
 }
