@@ -463,20 +463,29 @@ System.out.print("Ingrese el numero de la placa del automovil:");
 
                 case 7:
                     ImprimirVehiculos();
-                    
+                    int total_base_mas_placa=525;
                     System.out.println("Ingrese el vehiculo a sacar su boleta");
                     int boleta=leer.nextInt();
                     
                     for (int i = 0; i < vehiculos.size(); i++) {
-                         if (vehiculos.get(i) instanceof Automovil) {
-
-                            System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        if(boleta ==(i+1)){
+                        if (vehiculos.get(i) instanceof Automovil) {
+                            total_base_mas_placa+=1200;
+                            System.out.println("Su total es"+total_base_mas_placa);
+                            
                         }else if(vehiculos.get(i) instanceof Motocicleta){
-                        
-                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                          total_base_mas_placa+=200;
+                            System.out.println("Su total es"+total_base_mas_placa);
                         }else if(vehiculos.get(i) instanceof Autobus){
                         
-                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                         total_base_mas_placa+=1000;
+                            System.out.println("Su total es"+total_base_mas_placa);
+                        }
+                        
+                        }else{
+                        
+                            System.out.println("Vehiculo no seleccionado");
+                        
                         }
 
                       
