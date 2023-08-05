@@ -344,6 +344,71 @@ System.out.print("Ingrese el numero de la placa del automovil:");
                     ((Motocicleta) vehiculos.get(i)).setConsumo(consumo);
                                 
 
+                            }else if( vehiculos.get(i) instanceof Autobus){
+                            int cont_letras = 0;
+                    int cont_numeros = 0;
+                    System.out.print("Ingrese el numero de la placa del automovil:");
+                    String placa = leer.next();
+
+                    while (Placa(placa, vehiculos, 'H')) {
+
+                        Placa(placa, vehiculos, 'H');
+                    }
+                    
+                    ((Autobus)vehiculos.get(i)).setNum_placa(placa);
+
+                    System.out.print("Ingrese la Marca del automovil: ");
+                    String Marca = leer.next();
+                    
+                    leer.nextLine();
+                    ((Autobus)vehiculos.get(i)).setMarca(Marca);
+                    
+                    System.out.print("Ingrese el Modelo del automovil: ");
+                    String Modelo = leer.next();
+                    leer.nextLine();
+                    ((Autobus)vehiculos.get(i)).setModelo(Modelo);
+                    System.out.print("Ingrese el tipo del automovil: ");
+                    String tipo = leer.next();
+                    leer.nextLine();
+                    ((Autobus)vehiculos.get(i)).setTipo(tipo);
+                    System.out.print("Ingrese el color del vehiculo del automovil: ");
+                    System.out.println();
+                    Color color = JColorChooser.showDialog(null, "Elegir el color del vehiculo", Color.yellow);
+                    ((Autobus)vehiculos.get(i)).setColor(color);
+                    System.out.print("Ingrese el anio del automovil: ");
+                    int anio = leer.nextInt() - 1900;
+                    Date fecha_anio = new Date();
+                    fecha_anio.setYear(anio);
+                    ((Autobus)vehiculos.get(i)).setAnio(fecha_anio);
+
+                    System.out.println("Ingrese la capacidad de pasajeros del autobus: ");
+                    int capacidad_pasajeros = leer.nextInt();
+                    if (capacidad_pasajeros <= 0) {
+                        System.out.println("Sus asientos no pueden ser menor a 0");
+                        capacidad_pasajeros = leer.nextInt();
+                    }
+                    
+                    ((Autobus)vehiculos.get(i)).setCapacidad_pasajeros(capacidad_pasajeros);
+                    System.out.println("Ingrese el numero de ejes del autobus: ");
+                    int ejes = leer.nextInt();
+                    if (ejes <= 0) {
+                        System.out.println("Su numero de ejes no pueden ser menor a 0");
+                        ejes = leer.nextInt();
+                    }
+                    ((Autobus)vehiculos.get(i)).setNum_ejes(ejes);
+                    System.out.println("Ingrese la longitud del autobus: ");
+                    int longitud = leer.nextInt();
+                    if (longitud <= 0) {
+                        System.out.println("Su longitud no puede ser menor a 0");
+                        longitud = leer.nextInt();
+                    }
+                    ((Autobus)vehiculos.get(i)).setLongitud(longitud);
+                            
+                            
+                            
+                            }else{
+                            
+                                System.out.println("Vehiculo no encontrado");
                             }
 
                         }
@@ -352,6 +417,8 @@ System.out.print("Ingrese el numero de la placa del automovil:");
                     break;
                 }
                 case 5:
+                   
+                    
                     break;
 
                 case 6:
