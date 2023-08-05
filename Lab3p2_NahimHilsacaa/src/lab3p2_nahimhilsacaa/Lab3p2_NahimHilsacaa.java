@@ -50,6 +50,7 @@ public class Lab3p2_NahimHilsacaa {
 
                         Placa(placa, vehiculos, 'H');
                         break;
+                        
                     }
 
                     System.out.print("Ingrese la Marca del automovil: ");
@@ -449,12 +450,39 @@ System.out.print("Ingrese el numero de la placa del automovil:");
                         if (vehiculos.get(i) instanceof Automovil) {
 
                             System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        }else if(vehiculos.get(i) instanceof Motocicleta){
+                        
+                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        }else if(vehiculos.get(i) instanceof Autobus){
+                        
+                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
                         }
 
                     }
                     break;
 
                 case 7:
+                    ImprimirVehiculos();
+                    
+                    System.out.println("Ingrese el vehiculo a sacar su boleta");
+                    int boleta=leer.nextInt();
+                    
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                         if (vehiculos.get(i) instanceof Automovil) {
+
+                            System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        }else if(vehiculos.get(i) instanceof Motocicleta){
+                        
+                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        }else if(vehiculos.get(i) instanceof Autobus){
+                        
+                        System.out.println((i + 1) + "-" + vehiculos.get(i).toString());
+                        }
+
+                      
+                    }
+                    
+                    
                     break;
 
                 default:
