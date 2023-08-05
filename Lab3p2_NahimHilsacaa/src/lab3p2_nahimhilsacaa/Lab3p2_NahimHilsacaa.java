@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -416,11 +417,30 @@ System.out.print("Ingrese el numero de la placa del automovil:");
 
                     break;
                 }
-                case 5:
-                   
+                case 5:{
+                    
+                    boolean vehiculo=false;
+                   ImprimirVehiculos();
+                    System.out.println("Ingrese el vehiculo a eliminar");
+                    int eliminar=leer.nextInt();
+                    for (int i = 0; i < vehiculos.size(); i++) {
+                        
+                        if(eliminar ==(i+1)){
+                        
+                        vehiculos.remove(i);
+                        
+                        
+                            JOptionPane.showConfirmDialog(null, "Vehiculo eliminado");
+                        vehiculo=true;
+                    }
+                        if(vehiculo==false){
+                              JOptionPane.showConfirmDialog(null, "Vehiculo no encontrado");
+                        
+                        }
+                    }
                     
                     break;
-
+                    }
                 case 6:
                     System.out.println(" Lista de sus Vehiculos");
 
